@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Ethereum",
+        "chainId": 1,
+        "symbol": "ETH",
+        "rpcUrl": "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
+        "explorerUrl": "https://etherscan.io"
+    },
+    {
+        "name": "Binance Smart Chain",
+        "chainId": 56,
+        "symbol": "BNB",
+        "rpcUrl": "https://bsc-dataseed.binance.org",
+        "explorerUrl": "https://bscscan.com"
+    },
+    {
+        "name": "Polygon",
+        "chainId": 137,
+        "symbol": "MATIC",
+        "rpcUrl": "https://rpc-mainnet.maticvigil.com",
+        "explorerUrl": "https://polygonscan.com"
+    }
+]

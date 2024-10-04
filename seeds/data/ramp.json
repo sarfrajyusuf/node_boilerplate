@@ -1,0 +1,135 @@
+[
+    {
+        "name": "Coinbase",
+        "type": "ON-RAMP",
+        "description": "Popular cryptocurrency exchange",
+        "apiUrl": "https://www.coinbase.com",
+        "isActive": true
+    },
+    {
+        "name": "Binance",
+        "type": "ON-RAMP",
+        "description": "Major cryptocurrency exchange",
+        "apiUrl": "https://www.binance.com",
+        "isActive": true
+    },
+    {
+        "name": "Binance",
+        "type": "OFF-RAMP",
+        "description": "Major cryptocurrency exchange",
+        "apiUrl": "https://www.binance.com",
+        "isActive": true
+    },
+    {
+        "name": "Kraken",
+        "type": "ON-RAMP",
+        "description": "Secure cryptocurrency exchange",
+        "apiUrl": "https://www.kraken.com",
+        "isActive": true
+    },
+    {
+        "name": "Kraken",
+        "type": "OFF-RAMP",
+        "description": "Secure cryptocurrency exchange",
+        "apiUrl": "https://www.kraken.com",
+        "isActive": true
+    },
+    {
+        "name": "Gemini",
+        "type": "ON-RAMP",
+        "description": "Regulated cryptocurrency exchange",
+        "apiUrl": "https://www.gemini.com",
+        "isActive": true
+    },
+    {
+        "name": "Gemini",
+        "type": "OFF-RAMP",
+        "description": "Regulated cryptocurrency exchange",
+        "apiUrl": "https://www.gemini.com",
+        "isActive": true
+    },
+    {
+        "name": "Crypto.com",
+        "type": "ON-RAMP",
+        "description": "Cryptocurrency exchange with diverse services",
+        "apiUrl": "https://www.crypto.com",
+        "isActive": true
+    },
+    {
+        "name": "Crypto.com",
+        "type": "OFF-RAMP",
+        "description": "Cryptocurrency exchange with diverse services",
+        "apiUrl": "https://www.crypto.com",
+        "isActive": true
+    },
+    {
+        "name": "LocalBitcoins",
+        "type": "ON-RAMP",
+        "description": "Peer-to-peer cryptocurrency marketplace",
+        "apiUrl": "https://localbitcoins.com",
+        "isActive": true
+    },
+    {
+        "name": "Paxful",
+        "type": "ON-RAMP",
+        "description": "Peer-to-peer cryptocurrency marketplace",
+        "apiUrl": "https://paxful.com",
+        "isActive": true
+    },
+    {
+        "name": "SimpleBuy",
+        "type": "ON-RAMP",
+        "description": "Easy fiat-to-crypto purchase platform",
+        "apiUrl": "https://www.simplebuy.com",
+        "isActive": true
+    },
+    {
+        "name": "MoonPay",
+        "type": "ON-RAMP",
+        "description": "Fiat-to-crypto purchase platform",
+        "apiUrl": "https://www.moonpay.com",
+        "isActive": true
+    },
+    {
+        "name": "Bitcoin ATMs",
+        "type": "ON-RAMP",
+        "description": "Physical locations to buy crypto with cash",
+        "apiUrl": "https://coinatmradar.com",
+        "isActive": true
+    },
+    {
+        "name": "PayPal",
+        "type": "OFF-RAMP",
+        "description": "Limited crypto functionality in some regions",
+        "apiUrl": "https://www.paypal.com",
+        "isActive": true
+    },
+    {
+        "name": "Bitrefill",
+        "type": "OFF-RAMP",
+        "description": "Purchase gift cards with crypto",
+        "apiUrl": "https://www.bitrefill.com",
+        "isActive": true
+    },
+    {
+        "name": "Gyft",
+        "type": "OFF-RAMP",
+        "description": "Purchase gift cards with crypto",
+        "apiUrl": "https://www.gyft.com",
+        "isActive": true
+    },
+    {
+        "name": "BitPay",
+        "type": "OFF-RAMP",
+        "description": "Crypto payment processor for merchants",
+        "apiUrl": "https://bitpay.com",
+        "isActive": true
+    },
+    {
+        "name": "Coinbase Commerce",
+        "type": "OFF-RAMP",
+        "description": "Crypto payment solution for businesses",
+        "apiUrl": "https://commerce.coinbase.com",
+        "isActive": true
+    }
+]

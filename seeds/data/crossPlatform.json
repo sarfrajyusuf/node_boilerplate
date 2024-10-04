@@ -1,0 +1,20 @@
+[
+    {
+        "name": "SWFT",
+        "description": "Cross-chain platform for seamless token swaps.",
+        "apiUrl": "https://api.swft.pro",
+        "isActive": true
+    },
+    {
+        "name": "0x",
+        "description": "Open protocol for decentralized exchange of tokens.",
+        "apiUrl": "https://api.0x.org",
+        "isActive": true
+    },
+    {
+        "name": "Chainlink",
+        "description": "Decentralized oracle network.",
+        "apiUrl": "https://api.chain.link",
+        "isActive": true
+    }
+]
