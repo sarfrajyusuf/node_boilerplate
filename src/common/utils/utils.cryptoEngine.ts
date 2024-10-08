@@ -67,6 +67,7 @@ function decryptEngine(encryptedText: string, iv: string) {
 function verifyJwt(token: string) {
   try {
     const decoded = jwt.verify(token, env.JWT_SECRET);
+    console.log(decoded,"PPPPPPPPPPPPPP");
     return decoded;
   } catch (err) {
     console.error("JWT verification failed:");
@@ -93,5 +94,8 @@ function decodeJwt(data: string) {
     return null;
   }
 }
+function generateRandomToken(length = 32): string {
+  return crypto.randomBytes(length).toString('hex');
+}
 
-export const cryptoEngine = { encrypt, compare, Jwt: { generateJwt, decodeJwt, verifyJwt } };
+export const cryptoEngine = { encrypt, compare, generateRandomToken, Jwt: { generateJwt, decodeJwt, verifyJwt } };

@@ -3,8 +3,9 @@ import { handleServiceResponse } from "@/common/utils";
 import type { Request, RequestHandler, Response } from "express";
 
 class UserController {
-  public getUsers: RequestHandler = async (_req: Request, res: Response) => {
-    const serviceResponse = await userService.findAll();
+  public getUsers: RequestHandler = async (req: Request, res: Response) => {
+    const searchQuery = req.query.search as string | undefined;
+    const serviceResponse = await userService.findAll(searchQuery);
     return handleServiceResponse(serviceResponse, res);
   };
 
@@ -23,6 +24,32 @@ class UserController {
     const serviceResponse = await userService.loginUser(req.body);
     return handleServiceResponse(serviceResponse, res);
   };
+  public sendOtp: RequestHandler = async (req: Request, res: Response) => {
+    const serviceResponse = await userService.sendAuthOtp(req.body);
+    return handleServiceResponse(serviceResponse, res);
+  };
+  public verifyOtp: RequestHandler = async (req: Request, res: Response) => {
+    const serviceResponse = await userService.verifyOtp(req.body);
+    return handleServiceResponse(serviceResponse, res);
+  };
+  public forgotPasswrod: RequestHandler = async (req: Request, res: Response) => {
+    const serviceResponse = await userService.forgotPassword(req.body);
+    return handleServiceResponse(serviceResponse, res);
+  };
+  public resetPassword: RequestHandler = async (req: Request, res: Response) => {
+    const serviceResponse = await userService.resetPassword(req.body);
+    return handleServiceResponse(serviceResponse, res);
+  };
+  public changePassword: RequestHandler = async (req: Request, res: Response) => {
+    console.log("HHHHHHHHHHH")
+    const serviceResponse = await userService.changePassword(req.body);
+    return handleServiceResponse(serviceResponse, res);
+  };
+  public getAuthQr: RequestHandler = async (req: Request, res: Response) => {
+    const serviceResponse = await userService.googleAuth(req.body);
+    return handleServiceResponse(serviceResponse, res);
+  };
+
 }
 
 export const userController = new UserController();

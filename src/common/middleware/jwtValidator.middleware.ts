@@ -27,7 +27,9 @@ export const validateJwtToken = (req: Request, res: Response, next: NextFunction
   if (verified) {
     const { data } = verified;
     const decoded = cryptoEngine.Jwt.decodeJwt(data);
-    console.log("decoded", decoded);
+    console.log(data,"decoded:::::::::::::::*********************************::::::::::::::", JSON.stringify(decoded, null, 2));
+
+    // console.log("decoded:::::::::::::::*********************************::::::::::::::", decoded);
     next();
   } else {
     const failure = ServiceResponse.failure("JWT verification failed: invalid token", null, StatusCodes.BAD_REQUEST);

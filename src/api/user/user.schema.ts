@@ -4,14 +4,11 @@ import { DataTypes, Model } from "sequelize";
 
 class User extends Model {
   // Remove public class fields declarations
-
-  // You can still use TypeScript for type-checking if needed
-  // Define a type for the model attributes
   declare id: number;
   declare name: string;
   declare email: string;
   declare password: string;
-  declare phone: number; // Changed to string to match the schema definition
+  declare phone: number; 
   declare status: number;
 }
 
@@ -42,10 +39,11 @@ User.init(
       type: new DataTypes.INTEGER(),
       allowNull: true,
     },
+
   },
   {
     tableName: schemaName.user,
-    sequelize, // passing the `sequelize` instance is required
+    sequelize,
   },
 );
 

@@ -1,6 +1,6 @@
 import { createApiResponse } from "@/api-docs/openAPI.ResponseBuilders";
 import { userController } from "@/api/user/user.controller";
-import { AddUserSchemaBody, GetUserSchema, LoginSchemaBody, UserSchema } from "@/api/user/user.model";
+import { AddUserSchemaBody, changePassword, forgotPasswordBody, GetUserSchema, LoginSchemaBody, resetPasswordBody, sendAuthOtp, UserSchema, verifyAuthOtp } from "@/api/user/user.model";
 import { API } from "@/common/contants";
 import { validateJwtToken } from "@/common/middleware";
 import { HeadersSchema, expressRouter, validateRequest } from "@/common/utils";
@@ -51,8 +51,64 @@ const userApiPaths = [
     middleware: [validateRequest(LoginSchemaBody)], // Apply validation middleware before handler
     handler: userController.logIn,
   },
+  {
+    method: "post",
+    path: `/${parentRoute}/forgot-password`,
+    tags: ["User"],
+    request: { body: forgotPasswordBody.shape.body },
+    responses: createApiResponse(UserSchema, "Success"),
+    middleware: [validateRequest(forgotPasswordBody)], // Apply validation middleware before handler
+    handler: userController.forgotPasswrod,
+  },
+  {
+    method: "post",
+    path: `/${parentRoute}/reset-password`,
+    tags: ["User"],
+    request: { body: resetPasswordBody.shape.body },
+    responses: createApiResponse(UserSchema, "Success"),
+    middleware: [validateRequest(resetPasswordBody)], // Apply validation middleware before handler
+    handler: userController.resetPassword,
+  },
+  {
+    method: "post",
+    path: `/${parentRoute}/send-auth-otp`,
+    tags: ["User"],
+    request: { body: sendAuthOtp.shape.body },
+    responses: createApiResponse(UserSchema, "Success"),
+    middleware: [validateRequest(sendAuthOtp)], // Apply validation middleware before handler
+    handler: userController.sendOtp,
+  },
+  {
+    method: "post",
+    path: `/${parentRoute}/verify-auth-otp`,
+    tags: ["User"],
+    request: { body: verifyAuthOtp.shape.body },
+    responses: createApiResponse(UserSchema, "Success"),
+    middleware: [validateRequest(verifyAuthOtp)], // Apply validation middleware before handler
+    handler: userController.verifyOtp,
+  },
+  {
+    method: "post",
+    path: `/${parentRoute}/change-password`,
+    tags: ["User"],
+    request: { body: changePassword.shape.body, headers: HeadersSchema },
+    responses: createApiResponse(UserSchema, "Success"),
+    middleware: [validateRequest(changePassword), validateJwtToken], // Apply validation middleware before handler
+    handler: userController.changePassword,
+  },
+  {
+    method: "post",
+    path: `/${parentRoute}/googleAuthQr`,
+    tags: ["User"],
+    request: { body: sendAuthOtp.shape.body, headers: HeadersSchema },
+    responses: createApiResponse(UserSchema, "Success"),
+    middleware: [validateRequest(sendAuthOtp), validateJwtToken], // Apply validation middleware before handler
+    handler: userController.getAuthQr,
+  },
 ];
 
 expressRouter(userApiPaths, userRegistry, userRouter);
 
 export { userRouter, userRegistry };
+
+//forgotPasswrod
